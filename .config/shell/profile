@@ -1,0 +1,27 @@
+#!/bin/zsh
+
+# Sets environmental variables
+# Runs on login
+
+# Adds '~/.local/bin' to $PATH
+export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+
+# Default programs
+export EDITOR="nvim"
+export TERMINAL="st"
+export TERMINAL_PROG="st"
+export BROWSER="firefox"
+
+# Clean up home directory
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DOWNLOAD_DIR="$HOME/Downloads"
+export XINITRC="$XDG_CONFIG_HOME/x11/xinitrc"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export GOPATH="$XDG_DATA_HOME/go"
+
+# Start graphical server on current tty on login
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+	[[ $(fgconsole 2>/dev/null) == 1 ]] && exec startx "$XINITRC" -- vt1 &> /dev/null
+fi

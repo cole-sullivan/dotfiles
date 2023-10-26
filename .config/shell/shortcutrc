@@ -1,0 +1,12 @@
+# vim: filetype=sh
+alias cac="cd /home/cole/.cache && ls -A" \
+cfg="cd /home/cole/.config && ls -A" \
+dwn="cd /home/cole/Downloads && ls -A" \
+dt="cd /home/cole/.local/share && ls -A" \
+doc="cd /home/cole/Documents && ls -A" \
+src="cd /home/cole/.local/src && ls -A" \
+vbox="cd /home/cole/VirtualBox && ls -A" \
+cs403="cd /home/cole/Documents/CS403 && ls -A" \
+cs428="cd /home/cole/Documents/CS428 && ls -A" \
+cs438="cd /home/cole/Documents/CS438 && ls -A" \
+cs443="cd /home/cole/Documents/CS443 && ls -A" \
