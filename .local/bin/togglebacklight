@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Toggles keyboard backlight between 0, 50, and 100 using brightnessctl
+STATE=$(brightnessctl -d 'tpacpi::kbd_backlight' g)
+if [ $STATE -gt 1 ]; then
+	brightnessctl -d 'tpacpi::kbd_backlight' s 0
+else
+	brightnessctl -d 'tpacpi::kbd_backlight' s +1
+fi

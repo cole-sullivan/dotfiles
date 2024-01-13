@@ -1,0 +1,14 @@
+# General
+cac   ${XDG_CACHE_HOME:-$HOME/.cache}
+cfg   ${XDG_CONFIG_HOME:-$HOME/.config}
+dwn   ${XDG_DOWNLOAD_DIR:-$HOME/Downloads}
+dt    ${XDG_DATA_HOME:-$HOME/.local/share}
+doc   $HOME/Documents
+src   $HOME/.local/src
+vbox  $HOME/VirtualBox
+
+# School
+cs403 $HOME/Documents/CS403
+cs428 $HOME/Documents/CS428
+cs438 $HOME/Documents/CS438
+cs443 $HOME/Documents/CS443

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# This file runs after logging into a graphical session
+# Also sourced after startx/xinit
+
+feh --no-fehbg --bg-scale ${XDG_DATA_HOME:-$HOME/.local/share}/bg.*
+
+autostart="compfy pipewire"
+
+for program in $autostart; do
+	pidof -sx "$program" || "$program" &
+done >/dev/null 2>&1
+
+# Configure programs for high DPI display
+export QT_SCALE_FACTOR=2
+
+# Ensure that xrdb has finished running before moving on to start DWM
+[ -n "$xrdbpid" ] && wait "$xrdbpid"
