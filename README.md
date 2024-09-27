@@ -35,7 +35,7 @@
 ```
 .
 ├── ...
-├── .local                  # Scripts and programs installed w/o package manager
+├── .local                  
 │   ├── bin                 # Scripts
 │   ├── share               # Only contains wallpaper as of now
 │   └── src                 # suckless programs (dwm, st, dmenu)
